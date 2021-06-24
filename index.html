@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer></script>
+
+</head>
+<body>
+
+
+    <main>
+        <h1>FoodRecipe</h1>
+
+        <div class="container" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>   
+          
+          <div class="desktop">
+        <ul>
+            <li><a href="recipelist.html">Recipe</li></a>
+            <li><a href="Login.html">Login</li></a>
+        </ul>
+    </div>
+    </main>
+
+
+
+    <div class="navtop">
+        <ul>
+            <li><a href="recipelist.html">Recipe</li></a>
+            <li><a href="Login.html">Login</li></a>
+        </ul>
+    </div>
+    
+    <div class="introrecipe">
+
+        <div class="introimg">
+            <img src="./images/food.jpg">
+        </div>
+        
+
+        <div class="foodintro">
+   <h1>Let's Start Cooking with Popular Recipes</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum praesentium id fuga ut quia inventore sed eos iste, ipsum aliquid.</p>
+    <br>
+    <div>
+        <button>Get Started</button>
+        <button>Explore More</button>
+    </div>
+        </div>
+
+     
+    </div>
+
+    <div class="popularfood">
+        <h1 data-scroll>Popular Food</h1>
+        <p>We provide a variety of food and beverage recipe with high taste from 
+            famous chef.
+        </p>
+
+        <div class="imggrid">
+            <img src="./images/frenchfries.jpeg">
+            <img src="./images/noodles.webp">
+            <img src="./images/omelete.jpeg">
+            <img src="./images/pizza.jpeg">
+            <img src="./images/salmon.jpeg">
+            <img src="./images/spinachdish.jpeg">
+            <img src="./images/pot.webp">
+            <img src="./images/pancake.webp">
+            <img src="./images/fruit.jpeg">
+            <img class="lastimg" src="./images/dessert.jpeg">
+        </div>
+    </div>
+
+
+    <div class="toppickfood">
+
+<h1 class="pick">Our Top Pick Food Recipe</h1>
+
+<div class="toppickgrid">
+
+  <div class="left"></div>
+  <div class="right"></div>
+  <div class="left"></div>
+  <div class="right"></div>
+       
+        </div>
+
+        <div class="foodcontainer">
+    <button class="closecontainer">Close</button>
+
+    <div class="foodinfo">
+        <h1 id="foodtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</h1>
+        <img src="" id="foodimg">
+        <p id="description"></p>
+  </div>
+
+</div>
+
+    </div>
+
+    <div class="slideshowflex">
+
+    <div class="slideshow-container">
+<h1>Try our Latest Recipe</h1>
+        <div class="mySlides fade">
+            <img src="./images/bread.jpeg">
+        </div>
+        
+        <div class="mySlides  fade">
+            <img src="./images/mussels.jpeg">
+        </div>
+        
+        <div class="mySlides fade">
+            <img src="./images/tortilla.jpeg">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+
+
+        <div class="tablink">
+            <div class="tab">
+            <button class="tablinks" onclick="Food(event, 'firstfood')" id="defaultOpen">Popular Post</button>
+            <button class="tablinks" onclick="Food(event, 'secondfood')">Recent Post</button>
+            <button class="tablinks" onclick="Food(event, 'thirdfood')">New Recipe</button>
+          </div>
+          
+          <div id="firstfood" class="tabcontent">
+              <div class="tabcontentflex">
+              <div>
+                  <img src="./images/platter.jpeg">
+              </div>
+              <div class="tabintro">
+                  <h3>Platter</h3>
+                  <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              </div>
+              <div class="tabcontentflex">
+                <div>
+                    <img src="./images/drink.jpeg">
+                </div>
+                <div class="tabintro">
+                    <h3>Refreshing drink</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                </div>
+                <div class="tabcontentflex">
+                    <div>
+                        <img src="./images/salad.jpeg">
+                    </div>
+                    <div class="tabintro">
+                        <h3>Salad</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    </div>
+          </div>
+          
+          <div id="secondfood" class="tabcontent">
+            <div class="tabcontentflex">
+                <div>
+                    <img src="./images/tofu.jpeg">
+                </div>
+                <div class="tabintro">
+                    <h3>Tofu</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                </div>
+                <div class="tabcontentflex">
+                  <div>
+                      <img src="./images/pie.jpeg">
+                  </div>
+                  <div class="tabintro">
+                      <h3>Pie</h3>
+                      <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                  </div>
+                  <div class="tabcontentflex">
+                      <div>
+                          <img src="./images/curry.jpeg">
+                      </div>
+                      <div class="tabintro">
+                          <h3>Curry</h3>
+                          <p>Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      </div>
+          </div>
+          
+          <div id="thirdfood" class="tabcontent">
+            <div class="tabcontentflex">
+                <div>
+                    <img src="./images/soup.jpeg">
+                </div>
+                <div class="tabintro">
+                    <h3>Soup</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                </div>
+                <div class="tabcontentflex">
+                    <div>
+                        <img src="./images/icecream.jpeg">
+                    </div>
+                    <div class="tabintro">
+                        <h3>Icecream</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    </div>
+          </div>
+
+          </div>
+        </div>
+    
+
+    <div class="slider">
+
+        <h1>All Time Favorite Dishes</h1>
+
+    <main class="grid-item main">
+
+        <div class="items">
+
+          <div class="item item1">
+              <img src="./images/kebab.jpeg">
+              <div>
+                  <p>Kebab</p>
+                  <p>5 <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    (427)
+                </p>
+              </div>
+          </div>
+
+          <div class="item item2">
+              <img src="./images/pizza.jpeg">
+              <div>
+                <p>Pizza</p>
+                <p>4.7 <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star-half"></i></span>
+                    (222)
+                </p>
+            </div>
+          </div>
+
+          <div class="item item3">
+              <img src="./images/burger.jpeg">
+              <div>
+                <p>Burger</p>
+                <p>4.7 <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star-half"></i></span>
+                    (350)
+                </p>
+            </div>
+          </div>
+
+          <div class="item item4">
+              <img src="./images/biryani.jpeg">
+              <div>
+                <p>Biryani</p>
+                <p>5 <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    (500)
+                </p>
+            </div>
+          </div>
+
+          <div class="item item5">
+            <img src="./images/sushi.webp">
+            <div>
+              <p>Sushi</p>
+              <p>4.7 <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star-half"></i></span>
+                (452)
+            </p>
+          </div>
+        </div>
+
+
+        </div>
+
+        </main>
+        </div>
+
+
+
+        <div class="newsletter">
+            <div class="backdrop">
+            <h2>Never miss our latest recipe</h2>
+            <input type="text" placeholder="Enter your Email Address">
+      
+            <button>Subscribe</button>
+            </div>    
+        </div>
+
+        <footer>
+
+            <div class="footer">
+            
+            <div>
+                <h1>FoodRecipe</h1>
+            </div>
+
+            <div class="footergrid">
+
+            <div>
+                <h2>Your Real Food</h2>
+                <p>Recipe Meal</p>
+                <p>Recipe Binder</p>
+                <p>Meal Planner</p>
+            </div>
+
+            <div>
+                <h2>Recipe</h2>
+                <p>Family Favourites</p>
+                <p>Budget Meal</p>
+                <p>Chicken Recipe</p>
+                <p>Baking Recipe</p>
+            </div>
+
+            <div>
+                <h2>Meal & Courses</h2>
+                <p>Lunch ideas</p>
+                <p>Dinner Recipe</p>
+                <p>Dessert Recipe</p>
+                <p>Baking Recipe</p>
+            </div>
+
+            <div>
+                <h2>Privacy Centre</h2>
+                <p>Privacy & cookies policy</p>
+                <p>Visit our Privacy Centre</p>
+            </div>
+
+
+        </div>
+
+        </div>
+
+
+        <div class="follow">
+            <h2>Follow Us</h2>
+            <div>
+            <span><i class="fab fa-facebook"></i></span>
+            <span><i class="fab fa-twitter"></i></span>
+            <span><i class="fab fa-instagram"></i></span>
+            <span><i class="fab fa-pinterest"></i></span>
+            </div>
+        </div>
+        
+        
+    </footer>
+   
+
+
+</body>
+</html>

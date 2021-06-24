@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe list</title>
+    <link rel="stylesheet" href="recipelist.css">
+    <script src="recipelist.js" defer></script>
+</head>
+<body>
+
+    <main>
+        <h1>FoodRecipe</h1>
+
+        <div class="container1" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>   
+          
+          <div class="desktop">
+        <ul>
+            <li><a href="recipelist.html">Recipe</li></a>
+            <li><a href="Login.html">Login</li></a>
+            <li><a href="foodrecipe.html">Home</li></a>
+        </ul>
+    </div>
+    </main>
+
+
+
+    <div class="navtop">
+        <ul>
+            <li><a href="recipelist.html">Recipe</li></a>
+            <li><a href="Login.html">Login</li></a>
+            <li><a href="foodrecipe.html">Home</li></a>
+        </ul>
+    </div>
+    
+
+<div class="container">
+    <header>
+        <input type="text" id="searchterm">
+        <button id="search">Search</button>
+    </header>
+</div>
+
+<div class="foodcard">
+
+    <div class="card">
+        <img src="./images/biryani.jpeg">
+        <p>Biryani</p>
+    </div>
+
+    
+    <div class="card">
+        <img src="./images/sushi.webp">
+        <p>Sushi</p>
+    </div>
+
+
+    
+    <div class="card">
+        <img src="./images/chickencurry.jpg">
+        <p>Chicken Curry</p>
+    </div>
+
+    
+    <div class="card">
+        <img src="./images/chocolatecake.jpg">
+        <p>Cake</p>
+    </div>
+
+
+
+</div>
+
+<div class="favorite" id="favorite">
+
+</div>
+
+<div class="popupcontainer hidden" id="mealpopup">
+
+<div class="popup">
+    <button id="closepopup" class="closepopup">Close</button>
+
+    <div class="mealinfo" id="mealinfo">
+
+    </div>
+
+</div>
+
+</div>
+    
+</body>
+</html>

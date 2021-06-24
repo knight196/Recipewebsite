@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <Script src="login.js" defer></Script>
+</head>
+<body>
+
+    <main>
+        <h1>FoodRecipe</h1>
+
+        <div class="container" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>   
+          
+          <div class="desktop">
+        <ul>
+            <li><a href="recipelist.html">Recipe</li></a>
+            <li><a href="Login.html">Login</li></a>
+            <li><a href="foodrecipe.html">Home</li></a>
+        </ul>
+    </div>
+    </main>
+
+
+
+    <div class="navtop">
+        <ul>
+            <li><a href="recipelist.html">Recipe</li></a>
+            <li><a href="Login.html">Login</li></a>
+            <li><a href="foodrecipe.html">Home</li></a>
+    </div>
+
+    <div class="create">
+    <div>
+        <img src="./images/fruitcollage.jpeg">
+    </div>
+
+
+        <div class="createac">
+            <h2>Create an Account</h2>
+            <p>Email Address</p>
+            <input class="input" type="text" id="email" placeholder="Enter your email address">
+            <p>Password</p>
+            <input class="input pwd" type="password"  id="password" placeholder="Password">
+            <p>Password Check</p>
+            <input class="input pwd" type="password"  id="passwordcheck" placeholder="Password">
+            <br>
+
+                <input type="checkbox" onclick="pwdcheck()"> Show Password
+<br>
+            <button id="signup">Sign Up</button>
+
+            <p>Already have an account</p>
+            <button id="loginpage">Login</button>
+        </div>
+
+        <div class="login">
+            <h2>Login</h2>
+            <p>Email Address</p>
+            <input class="input" type="text" id="email2" placeholder="Enter your email address">
+            <p>Password</p>
+            <input class="input pwd1"  type="password"  id="password2" placeholder="Password">
+            <br>
+
+                <input type="checkbox" onclick="pwdcheck1()"> Show Password
+<br>
+            <button id="login">Login</button>
+
+            
+
+            <p>Don't have an account</p>
+            <button id="createnewpage">Create New Account</button>
+        </div>
+
+     
+    </div>
+</body>
+</html>

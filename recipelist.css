@@ -44,6 +44,11 @@ body{
       color:white;
       background:black;
   }
+ main.show{
+      position: fixed;
+      z-index:200;
+      width:100%;
+  }
   .navtop{
       text-align: center;
       background:darkcyan;
@@ -64,9 +69,12 @@ body{
     }
     
     .navtop.show{
-        opacity:1;
+          opacity:1;
         pointer-events: auto;
         height:100%;
+        padding: 50px 0;
+        position: fixed;
+        top:50px;
     }
     .desktop{
         display:none;
@@ -178,7 +186,7 @@ font-size: 20px;
 
 a{
     text-decoration: none;
-    color:black;
+    color:white;
 }
 a:hover{
     color:grey;

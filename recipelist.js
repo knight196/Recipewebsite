@@ -1,6 +1,7 @@
 function myFunction(x) {
     x.classList.toggle("change");
     document.querySelector('.navtop').classList.toggle('show');
+    document.querySelector('main').classList.toggle('show');
   }
 
 

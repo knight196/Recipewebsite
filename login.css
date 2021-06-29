@@ -69,6 +69,7 @@ padding:10px 0;
       position: fixed;
       z-index:200;
       width:100%;
+      top:0;
   }
   .navtop{
       text-align: center;

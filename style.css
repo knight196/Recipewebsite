@@ -341,13 +341,13 @@ footer{
 }
 .fa-instagram{
 color:#515bd4;
-text-shadow: -2px 2px 2px #405de6,
--4px 2px 2px #405de6;
+text-shadow: -2px 2px 2px rgba(0,0,0,0.5),
+    -4px 2px 2px rgba(0,0,0,0.5);
 
 }
 .fa-pinterest{
     color:red;
-    text-shadow: -2px 2px 2px rgba(0,0,0,0.5),
+text-shadow: -2px 2px 2px rgba(0,0,0,0.5),
     -4px 2px 2px rgba(0,0,0,0.5);
 }
 a{

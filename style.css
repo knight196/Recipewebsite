@@ -328,20 +328,28 @@ footer{
 .fas {
     color:orange;
 }
-
 .fa-facebook{
     color:blue;
+    text-shadow: -2px 2px 2px #4267B2,
+    -4px 2px 2px #4267B2;
 }
 .fa-twitter{
     color:#08a0e9;
+    text-shadow: -2px 2px 2px rgba(0,0,0,0.5),
+    -4px 2px 2px rgba(0,0,0,0.5),
+    -4px 2px 2px #08a0e9;
 }
 .fa-instagram{
 color:#515bd4;
+text-shadow: -2px 2px 2px #405de6,
+-4px 2px 2px #405de6;
+
 }
 .fa-pinterest{
     color:red;
+    text-shadow: -2px 2px 2px rgba(0,0,0,0.5),
+    -4px 2px 2px rgba(0,0,0,0.5);
 }
-
 a{
     text-decoration: none;
     color:white;

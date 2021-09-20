@@ -79,17 +79,6 @@ button.appendChild(t);
 food[i].appendChild(img);
 food[i].appendChild(p);
 food[i].appendChild(button);
-
-
-food[i].addEventListener('click', function() {
-  loadfood(foodlist[this.id]);
-  document.querySelector('.foodcontainer').classList.add('show');
-
-  var closecontainer = document.querySelector('.closecontainer');
-  closecontainer.addEventListener('click', () => {
-document.querySelector('.foodcontainer').classList.remove('show');
-  });
-})
 }
 
 const slider = document.querySelector('.items');

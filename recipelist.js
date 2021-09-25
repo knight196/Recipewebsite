@@ -74,12 +74,8 @@ const meals = await getMealsBySearch(search);
 if(meals){
 meals.forEach((meal) => {
     addMeal(meal);
-    var meal = document.querySelectorAll('.meal-body');
-    var foodcard = document.querySelectorAll('.card');
-    for(var i=0; i<meal.length; i++){
-        meal[i].style.display="block";
-        foodcard[i].style.display="none";
-    }
+
+document.querySelector('.favorite').classList.add('show');
 });
 }
 });

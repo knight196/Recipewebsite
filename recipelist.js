@@ -4,13 +4,12 @@ function myFunction(x) {
     document.querySelector('main').classList.toggle('show');
   }
 
-
-
-getRandomMeal();
+  getRandomMeal();
 
 const favorite = document.getElementById('favorite');
 
 const serachterm = document.getElementById('searchterm');
+
 const search = document.getElementById('search');
 
 const mealpopup = document.getElementById('mealpopup');
@@ -42,6 +41,7 @@ async function getMealsBySearch(term){
 }
 function addMeal(mealData){
     const meal = document.createElement('div');
+
     meal.classList.add('meal');
     meal.innerHTML = `  
     <ul class="meal-body">
@@ -74,8 +74,7 @@ const meals = await getMealsBySearch(search);
 if(meals){
 meals.forEach((meal) => {
     addMeal(meal);
-
-document.querySelector('.favorite').classList.add('show');
+   document.querySelector('.favorite').classList.add('show');
 });
 }
 });

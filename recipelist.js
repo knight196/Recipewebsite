@@ -97,7 +97,7 @@ function showMealInfo(mealData){
 
     for(let i=1; i<=20; i++){
         if(mealData['strIngredient'+i]){
-            ingredients.push(`${mealData['strIngredient' + i]} / ${mealData['strMeasure' + i]}`)
+            ingredients.push(`${mealData['strIngredient' + i]} - ${mealData['strMeasure' + i]}`)
         }else{
             break;
         }

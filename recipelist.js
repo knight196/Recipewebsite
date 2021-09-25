@@ -93,24 +93,24 @@ function showMealInfo(mealData){
     mealinfo.innerHTML = "";
     const mealInfoel = document.createElement('div');
 
+    const ingredients = [];
+
+    for(let i=1; i<=20; i++){
+        if(mealData['strIngredient'+i]){
+            ingredients.push(`${mealData['strIngredient' + i]} / ${mealData['strMeasure' + i]}`)
+        }else{
+            break;
+        }
+    }
+
     mealInfoel.innerHTML = `
     <h1>${mealData.strMeal}</h1>
     <img src="${mealData.strMealThumb}">
-
     <p>${mealData.strInstructions}</p>
-
     <div class="ingredients">
     <h3>Ingredients</h3>
     <ol>
-    <li>${mealData.strIngredient1}</li>
-    <li>${mealData.strIngredient2}</li>
-    <li>${mealData.strIngredient3}</li>
-    <li>${mealData.strIngredient4}</li>
-    <li>${mealData.strIngredient5}</li>
-    <li>${mealData.strIngredient6}</li>
-    <li>${mealData.strIngredient7}</li>
-    <li>${mealData.strIngredient8}</li>
-    <li>${mealData.strIngredient9}</li>
+    ${ingredients.map((ing) => `<li>${ing}</li>`).join('')}
     </ol>
     </div>
 `

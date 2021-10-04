@@ -55,7 +55,7 @@ fetch(url).then(res => res.json()).then(data => {
             </div>
 
             <div>
-            <button class="btn">Close</button>
+            <button class="closebtn btn-primary">Close</button>
             </div>
 
         </div>
@@ -73,7 +73,7 @@ fetch(url).then(res => res.json()).then(data => {
         const btn = question.querySelector('.img');
 
         
-        const btn2 = question.querySelector('.btn')
+        const btn2 = question.querySelector('.closebtn')
 
         
         btn.addEventListener('click', function(){

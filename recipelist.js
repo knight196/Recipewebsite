@@ -1,116 +1,192 @@
-function myFunction(x) {
-    x.classList.toggle("change");
+function myFunction(x){
+    x.classList.toggle('change');
     document.querySelector('.navtop').classList.toggle('show');
     document.querySelector('main').classList.toggle('show');
-  }
-
-  getRandomMeal();
-
-const favorite = document.getElementById('favorite');
-
-const serachterm = document.getElementById('searchterm');
-
-const search = document.getElementById('search');
-
-const mealpopup = document.getElementById('mealpopup');
-
-const popupclose = document.getElementById('closepopup');
-
-const mealinfo = document.getElementById('mealinfo');
-
-async function getRandomMeal(){
-const resp = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
-
-const respData = await resp.json();
-
-const randomMeal = respData.meals[0];
-
-
-addMeal(randomMeal, true);
-
-}
-
-async function getMealsBySearch(term){
- const resp = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + term);
-
- const respData = await resp.json();
- const meals = respData.meals;
-
- return meals;
-
-}
-function addMeal(mealData){
-    const meal = document.createElement('div');
-
-    meal.classList.add('meal');
-    meal.innerHTML = `  
-    <ul class="meal-body">
-    <li>
-    <img src="${mealData.strMealThumb}">
-    <h3>${mealData.strMeal}</h3>
-        </li>
-    
-    </ul>
-    `;
-
-meal.querySelector('.meal-body').addEventListener('click', () => {
-    showMealInfo(mealData);
-   
-});
-
-favorite.appendChild(meal);
 }
 
 
+var container2 = document.getElementById('container2')
 
-search.addEventListener('click', async () => {
+function showDisplay(){
 
-    favorite.innerHTML ="";
-    
-const search = searchterm.value;
+fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
 
-const meals = await getMealsBySearch(search);
+.then(response => response.json())
+.then(data => {
+  container2.innerHTML = "";
+    if(data.categories){
+        data.categories.forEach(meal => {
 
-if(meals){
-meals.forEach((meal) => {
-    addMeal(meal);
-   document.querySelector('.favorite').classList.add('show');
-});
+        var card = `
+        <div class="card">
+        <img class="img" src="${meal.strCategoryThumb}">
+        <p>${meal.strCategory}</p>
+
+        <div class="info">
+
+        <div class="infobox">
+
+        <div>
+        <img class="infoimg" src="${meal.strCategoryThumb}">
+        </div>
+
+        <div>
+        <h2>${meal.strCategory}</h2>
+        </div>
+
+        
+        <div>
+        <p>${meal.strCategoryDescription}</p>
+        </div>
+
+        
+        </div>
+
+        <button class="closebtn">Close</button>
+        
+        </div>
+
+        </div>
+        
+        `
+        
+        container2.innerHTML += card;
+        const questions = document.querySelectorAll('.card');
+
+        questions.forEach(function (question){
+            
+        const btn = question.querySelector('img');
+
+        
+        const btn2 = question.querySelector('.closebtn')
+
+        
+        btn.addEventListener('click', function(){
+
+    question.querySelector('.info').classList.toggle('show');
+        
+        })
+        
+        btn2.addEventListener('click', function(){
+        
+                question.querySelector('.info').classList.remove('show');
+            })
+        
+        
+        })
+
+        
+
+    })
 }
+})
+
+}
+showDisplay();
+
+
+
+var container3 = document.querySelector('#container3');
+var infobtn = document.getElementById('btn').addEventListener('click', getMeal);
+
+function getMeal(){
+
+    const search = document.querySelector('#input').value.trim();
+
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+.then(response => response.json())
+.then(data => {
+  container3.innerHTML = "";
+    if(data.meals){
+        data.meals.forEach(meal => {
+
+            const ingredients = [];
+
+            for(let i=1; i<=20; i++){
+                if(meal['strIngredient' + i]){
+                    ingredients.push(`${meal['strIngredient'+ i]} - ${meal['strMeasure' + i]}`)
+                }else{
+                    break;
+                }
+            }
+
+        var card = `
+        <div class="card">
+        <img class="img" src="${meal.strMealThumb}">
+        <p>${meal.strMeal}</p>
+
+        <div class="info">
+
+        <div class="infobox">
+
+        <div>
+        <img class="infoimg" src="${meal.strMealThumb}">
+        </div>
+
+        <div>
+        <h2>${meal.strMeal}</h2>
+        </div>
+
+        
+        <div>
+        <p>${meal.strInstructions}</p>
+        <h2>Ingredients</h2>
+        <ol>
+        ${ingredients.map((ing) => `<li>${ing}</li>`).join('')}
+        </ol>
+
+        </div>
+
+        
+        </div>
+
+        <button class="closebtn">Close</button>
+        
+        </div>
+
+        </div>
+
+        `
+
+            container3.innerHTML += card;
+
+            
+        container2.innerHTML += card;
+        const questions = document.querySelectorAll('.card');
+
+        questions.forEach(function (question){
+            
+        const btn = question.querySelector('img');
+
+        
+        const btn2 = question.querySelector('.closebtn')
+
+        
+        btn.addEventListener('click', function(){
+
+    question.querySelector('.info').classList.toggle('show');
+        
+        })
+        
+        btn2.addEventListener('click', function(){
+        
+                question.querySelector('.info').classList.remove('show');
+            })
+        
+        
+        })
 });
-
-
-popupclose.addEventListener('click', () => {
-mealpopup.classList.add('hidden');
-});
-
-function showMealInfo(mealData){
-    mealinfo.innerHTML = "";
-    const mealInfoel = document.createElement('div');
-
-    const ingredients = [];
-
-    for(let i=1; i<=20; i++){
-        if(mealData['strIngredient'+i]){
-            ingredients.push(`${mealData['strIngredient' + i]} - ${mealData['strMeasure' + i]}`)
-        }else{
-            break;
-        }
     }
-
-    mealInfoel.innerHTML = `
-    <h1>${mealData.strMeal}</h1>
-    <img src="${mealData.strMealThumb}">
-    <p>${mealData.strInstructions}</p>
-    <div class="ingredients">
-    <h3>Ingredients</h3>
-    <ol>
-    ${ingredients.map((ing) => `<li>${ing}</li>`).join('')}
-    </ol>
-    </div>
-`
-
-    mealinfo.appendChild(mealInfoel);
-
-    mealpopup.classList.remove('hidden');
+});
+document.getElementById('container2').style.display="none";
+document.querySelector('#container3').style.display="grid";
 }
+
+
+
+
+
+
+
+
+

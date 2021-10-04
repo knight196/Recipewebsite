@@ -112,10 +112,10 @@ const searchTerm = input2.value;
 if(searchTerm){
     getfoods(api2 + '1/search.php?s='+searchTerm)
         document.body.style.background="coral";
-        document.querySelector('.container').style.background="darkcyan";
+        document.querySelector('.containerbox').style.background="darkcyan";
 }else{
     document.body.style.background="darkcyan";
-    document.querySelector('.container').style.background="coral";
+    document.querySelector('.containerbox').style.background="coral";
     getfoods(api);
 }
 

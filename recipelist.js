@@ -49,6 +49,7 @@ fetch(url).then(res => res.json()).then(data => {
 
             <div>
             <ol>
+            <h2>Ingredients</h2>
             ${ingredients.map((ing) => `<li>${ing}</li>`).join('')}
             </ol>
             </div>

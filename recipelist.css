@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
 *{
     box-sizing: border-box;
     padding:0;
@@ -81,8 +80,7 @@ body{
         display:none;
     }
     
-    .container{
-        width:100%;
+    .containerbox{
         background:coral;
     }
     a{
@@ -138,6 +136,7 @@ header button{
     scrollbar-width: none;
     scroll-behavior: smooth;
     padding:20px;
+    z-index:100;
 }
 .info.show{
     opacity:1;
@@ -147,7 +146,7 @@ header button{
     display: none;
   }
   
-.btn{
+.closebtn{
     position: absolute;
     top:0;
     right:0;

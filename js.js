@@ -5,82 +5,101 @@ function myFunction(x) {
   }
 
 
-var foodtitle = document.querySelector('#foodtitle');
+const api ="foodlist.json";
 
-var foodimg = document.querySelector('#foodimg');
+var container2 = document.querySelector('.toppickfoodgrid');
 
-var fooddescription = document.querySelector('#description');
+function getfoods(url){
 
-var foodlist = [
-  food1 ={
-    name:'chicken curry',
-    images:'./images/chickencurry.jpg',
-    clipArt:'chickencurry.jpg',
-    description1:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt...',
-    description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt minima eligendi aut maiores ratione nisi tempora alias, cupiditate ab quia quisquam dicta, repellendus sint consectetur quam quibusdam voluptas!',
-  },
-  food2 ={
-    name:'springroll',
-    images:'./images/springroll.jpg',
-    clipArt:'springroll.jpg',
-    description1:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt...',
-    description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt minima eligendi aut maiores ratione nisi tempora alias, cupiditate ab quia quisquam dicta, repellendus sint consectetur quam quibusdam voluptas!'
-  },
-  food3 ={
-    name:'chicken fried rice',
-    images:'./images/chickenfriedrice.jpg',
-    clipArt:'chickenfriedrice.jpg',
-    description1:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt...',
-    description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt minima eligendi aut maiores ratione nisi tempora alias, cupiditate ab quia quisquam dicta, repellendus sint consectetur quam quibusdam voluptas!'
-  },
-  food4 ={
-    name:'chocolatecake',
-    images:'./images/chocolatecake.jpg',
-    clipArt:'chocolatecake.jpg',
-    description1:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt...',
-    description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Reprehenderit quod incidunt minima eligendi aut maiores ratione nisi tempora alias, cupiditate ab quia quisquam dicta, repellendus sint consectetur quam quibusdam voluptas!'
-  }
-]
+fetch(url).then(res => res.json()).then(data => {
+    container2.innerHTML = "";
 
-function loadfood(foodlist){
-foodimg.src ="./images/" + foodlist.clipArt;
-foodtitle.textContent = foodlist.name;
-fooddescription.textContent = foodlist.description;
+    if(data.meals){
+        data.meals.forEach(meal => {
+
+            const ingredients = [];
+
+            for(let i=1; i<=20; i++){
+                if(meal['strIngredient' + i]){
+                    ingredients.push(`${meal['strIngredient'+ i]} - ${meal['strMeasure' + i]}`)
+                }else{
+                    break;
+                }
+            }
+
+        var card = `
+        <div class="card">
+
+        <img class="img" src="${meal.strMealThumb}">
+        <p>${meal.strMeal}</p>
+        <button class="readmore">Read More</button>
+
+        <div class="info">
+
+        <div class="infoshow">
+        <div>
+            <img  src="${meal.strMealThumb}">
+            </div>
+
+            <div>
+            <h2>${meal.strMeal}</h2>
+            </div>
+
+            <div>
+
+            <p>${meal.strInstructions}</p>
+            </div>
+
+            <div>
+            <ol>
+            <h2>Ingredients</h2>
+            ${ingredients.map((ing) => `<li>${ing}</li>`).join('')}
+            </ol>
+            </div>
+
+            <div>
+            <button class="closebtn btn-primary">Close</button>
+            </div>
+
+        </div>
+
+        </div>
+
+        </div>
+        
+        `
+        
+        container2.innerHTML += card;
+
+        const questions = document.querySelectorAll('.card');
+
+        questions.forEach(function (question){
+            
+        const btn = question.querySelector('.readmore');
+
+        
+        const btn2 = question.querySelector('.closebtn')
+
+        
+        btn.addEventListener('click', function(){
+
+    question.querySelector('.info').classList.toggle('show');
+        
+        })
+        
+        btn2.addEventListener('click', function(){
+        
+                question.querySelector('.info').classList.remove('show');
+            })
+        
+        
+        })
+    
+        });
+    }
+});
 }
-
-
-
-let food = document.querySelector('.toppickgrid').children;
-
-for(var i=0; i<food.length; i++){
-
-food[i].textContent = foodlist[i].name;
-food[i].setAttribute('id',i);
-
-
-const img = document.createElement('IMG');
-
-const p = document.createElement('P');
-
-const button = document.createElement('BUTTON');
-
-var t = document.createTextNode("Read More");
-
-img.classList=(img);
-
-img.src=foodlist[i].images;
-
-p.textContent=foodlist[i].description1;
-
-
-button.appendChild(t);
-
-
-food[i].appendChild(img);
-food[i].appendChild(p);
-food[i].appendChild(button);
-}
-
+getfoods(api);
 const slider = document.querySelector('.items');
 let isDown = false;
 let startX;

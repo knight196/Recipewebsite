@@ -916,10 +916,6 @@ text-transform: uppercase;
         width:400px;
         height:300px;
 }
-.toppickfood{
-   height:100vh;
-}
-
 .item{
     top:20px;
 }
@@ -974,9 +970,6 @@ footer{
 .info img{
     width:200px;
     height:200px;
-}
-.toppickfood{
-height:110vh;
 }
 }
 

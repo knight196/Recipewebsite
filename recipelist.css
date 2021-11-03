@@ -181,6 +181,24 @@ height:50%;
         width:20%;
         height:20%;
         }
+         .navtop{
+            display:none;
+        }
+        .desktop{
+            display:block;
+        }
+        .desktop ul{
+            display:flex;
+            font-size: 20px;
+            list-style: none;
+            text-transform: uppercase;
+                }
+                .desktop li{
+                    padding: 0 10px;
+                }
+                .container1{
+                    display: none;
+                }
 }
 
 
